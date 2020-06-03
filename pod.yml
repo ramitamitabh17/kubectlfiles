@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-        name: myweb-deploy
+    name: myweb-deploy
 spec:
-        replicas: 3
-        selector:
-                matchlabels:
-                        env: testing
-        template:
-                metadata:
-                        name: myweb-pod
-                        labels:
-                                env:testing
-                spec:
-                        containers:
-                                - name: myweb-con
-                                  image: ramitabh/httpdapp:latest
+    replicas: 3
+    selector:
+       matchLabels:
+          env: testing
+    template:
+       metadata:
+          name: myweb-pod
+          labels: 
+            env: testing
+       spec:
+          containers:
+          - name: myweb-con
+            image: ramitabh/httpdapp:latest
+
